@@ -1,0 +1,26 @@
+{
+  "footballClubErpApp": {
+    "training": {
+      "home": {
+        "title": "Trainings",
+        "createLabel": "Training erstellen",
+        "createOrEditLabel": "Training erstellen oder bearbeiten",
+        "notFound": "No Trainings found"
+      },
+      "created": "Training erstellt mit ID {{ param }}",
+      "updated": "Training aktualisiert mit ID {{ param }}",
+      "deleted": "Training gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Training {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Training"
+      },
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "name": "Name",
+      "team": "Team",
+      "weeklyProgram": "Weekly Program"
+    }
+  }
+}

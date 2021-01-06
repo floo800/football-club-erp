@@ -1,0 +1,23 @@
+{
+  "footballClubErpApp": {
+    "weeklyProgram": {
+      "home": {
+        "title": "Weekly Programs",
+        "createLabel": "Weekly Program erstellen",
+        "createOrEditLabel": "Weekly Program erstellen oder bearbeiten",
+        "notFound": "No Weekly Programs found"
+      },
+      "created": "Weekly Program erstellt mit ID {{ param }}",
+      "updated": "Weekly Program aktualisiert mit ID {{ param }}",
+      "deleted": "Weekly Program gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Weekly Program {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Weekly Program"
+      },
+      "week": "Week",
+      "trainings": "Trainings"
+    }
+  }
+}

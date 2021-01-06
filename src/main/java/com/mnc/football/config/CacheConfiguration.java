@@ -47,6 +47,13 @@ public class CacheConfiguration {
             createCache(cm, com.mnc.football.domain.User.class.getName());
             createCache(cm, com.mnc.football.domain.Authority.class.getName());
             createCache(cm, com.mnc.football.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mnc.football.domain.Children.class.getName());
+            createCache(cm, com.mnc.football.domain.Team.class.getName());
+            createCache(cm, com.mnc.football.domain.WeeklyProgram.class.getName());
+            createCache(cm, com.mnc.football.domain.WeeklyProgram.class.getName() + ".trainings");
+            createCache(cm, com.mnc.football.domain.Training.class.getName());
+            createCache(cm, com.mnc.football.domain.Event.class.getName());
+            createCache(cm, com.mnc.football.domain.Document.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

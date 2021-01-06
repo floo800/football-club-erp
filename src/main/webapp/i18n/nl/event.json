@@ -1,0 +1,26 @@
+{
+  "footballClubErpApp": {
+    "event": {
+      "home": {
+        "title": "Events",
+        "createLabel": "Maak een nieuwe Event",
+        "createOrEditLabel": "Maak of wijzig een Event",
+        "notFound": "No Events found"
+      },
+      "created": "A new Event is created with identifier {{ param }}",
+      "updated": "A Event is updated with identifier {{ param }}",
+      "deleted": "A Event is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Event {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Event"
+      },
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "description": "Description",
+      "image": "Image"
+    }
+  }
+}

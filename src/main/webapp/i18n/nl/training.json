@@ -1,0 +1,26 @@
+{
+  "footballClubErpApp": {
+    "training": {
+      "home": {
+        "title": "Trainings",
+        "createLabel": "Maak een nieuwe Training",
+        "createOrEditLabel": "Maak of wijzig een Training",
+        "notFound": "No Trainings found"
+      },
+      "created": "A new Training is created with identifier {{ param }}",
+      "updated": "A Training is updated with identifier {{ param }}",
+      "deleted": "A Training is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Training {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Training"
+      },
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "name": "Name",
+      "team": "Team",
+      "weeklyProgram": "Weekly Program"
+    }
+  }
+}
