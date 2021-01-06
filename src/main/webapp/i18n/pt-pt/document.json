@@ -1,0 +1,23 @@
+{
+  "footballClubErpApp": {
+    "document": {
+      "home": {
+        "title": "Documents",
+        "createLabel": "Criar novo(a) Document",
+        "createOrEditLabel": "Criar ou editar Document",
+        "notFound": "Nenhum Documents encontrado"
+      },
+      "created": "Um novo Document foi criado com o identificador {{ param }}",
+      "updated": "Document com identificador {{ param }} foi actualizado",
+      "deleted": "Document com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Document {{ id }}?"
+      },
+      "detail": {
+        "title": "Document"
+      },
+      "name": "Name",
+      "document": "Document"
+    }
+  }
+}

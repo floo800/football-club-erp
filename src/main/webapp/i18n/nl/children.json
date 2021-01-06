@@ -1,0 +1,29 @@
+{
+  "footballClubErpApp": {
+    "children": {
+      "home": {
+        "title": "Children",
+        "createLabel": "Maak een nieuwe Children",
+        "createOrEditLabel": "Maak of wijzig een Children",
+        "notFound": "No Children found"
+      },
+      "created": "A new Children is created with identifier {{ param }}",
+      "updated": "A Children is updated with identifier {{ param }}",
+      "deleted": "A Children is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Children {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Children"
+      },
+      "name": "Name",
+      "firstName": "First Name",
+      "birthDate": "Birth Date",
+      "birthCountry": "Birth Country",
+      "birthCity": "Birth City",
+      "photo": "Photo",
+      "parentKey": "Parent Key",
+      "team": "Team"
+    }
+  }
+}

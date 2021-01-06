@@ -1,0 +1,23 @@
+{
+  "footballClubErpApp": {
+    "weeklyProgram": {
+      "home": {
+        "title": "Weekly Programs",
+        "createLabel": "Maak een nieuwe Weekly Program",
+        "createOrEditLabel": "Maak of wijzig een Weekly Program",
+        "notFound": "No Weekly Programs found"
+      },
+      "created": "A new Weekly Program is created with identifier {{ param }}",
+      "updated": "A Weekly Program is updated with identifier {{ param }}",
+      "deleted": "A Weekly Program is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Weekly Program {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Weekly Program"
+      },
+      "week": "Week",
+      "trainings": "Trainings"
+    }
+  }
+}
