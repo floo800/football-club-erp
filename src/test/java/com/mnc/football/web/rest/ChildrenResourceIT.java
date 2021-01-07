@@ -55,9 +55,6 @@ public class ChildrenResourceIT {
     private static final String DEFAULT_PHOTO_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_PHOTO_CONTENT_TYPE = "image/png";
 
-    private static final String DEFAULT_PARENT_KEY = "AAAAAAAAAA";
-    private static final String UPDATED_PARENT_KEY = "BBBBBBBBBB";
-
     @Autowired
     private ChildrenRepository childrenRepository;
 
@@ -89,8 +86,7 @@ public class ChildrenResourceIT {
             .birthCountry(DEFAULT_BIRTH_COUNTRY)
             .birthCity(DEFAULT_BIRTH_CITY)
             .photo(DEFAULT_PHOTO)
-            .photoContentType(DEFAULT_PHOTO_CONTENT_TYPE)
-            .parentKey(DEFAULT_PARENT_KEY);
+            .photoContentType(DEFAULT_PHOTO_CONTENT_TYPE);
         return children;
     }
     /**
@@ -107,8 +103,7 @@ public class ChildrenResourceIT {
             .birthCountry(UPDATED_BIRTH_COUNTRY)
             .birthCity(UPDATED_BIRTH_CITY)
             .photo(UPDATED_PHOTO)
-            .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
-            .parentKey(UPDATED_PARENT_KEY);
+            .photoContentType(UPDATED_PHOTO_CONTENT_TYPE);
         return children;
     }
 
@@ -139,7 +134,6 @@ public class ChildrenResourceIT {
         assertThat(testChildren.getBirthCity()).isEqualTo(DEFAULT_BIRTH_CITY);
         assertThat(testChildren.getPhoto()).isEqualTo(DEFAULT_PHOTO);
         assertThat(testChildren.getPhotoContentType()).isEqualTo(DEFAULT_PHOTO_CONTENT_TYPE);
-        assertThat(testChildren.getParentKey()).isEqualTo(DEFAULT_PARENT_KEY);
     }
 
     @Test
@@ -180,8 +174,7 @@ public class ChildrenResourceIT {
             .andExpect(jsonPath("$.[*].birthCountry").value(hasItem(DEFAULT_BIRTH_COUNTRY)))
             .andExpect(jsonPath("$.[*].birthCity").value(hasItem(DEFAULT_BIRTH_CITY)))
             .andExpect(jsonPath("$.[*].photoContentType").value(hasItem(DEFAULT_PHOTO_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].photo").value(hasItem(Base64Utils.encodeToString(DEFAULT_PHOTO))))
-            .andExpect(jsonPath("$.[*].parentKey").value(hasItem(DEFAULT_PARENT_KEY)));
+            .andExpect(jsonPath("$.[*].photo").value(hasItem(Base64Utils.encodeToString(DEFAULT_PHOTO))));
     }
     
     @Test
@@ -201,8 +194,7 @@ public class ChildrenResourceIT {
             .andExpect(jsonPath("$.birthCountry").value(DEFAULT_BIRTH_COUNTRY))
             .andExpect(jsonPath("$.birthCity").value(DEFAULT_BIRTH_CITY))
             .andExpect(jsonPath("$.photoContentType").value(DEFAULT_PHOTO_CONTENT_TYPE))
-            .andExpect(jsonPath("$.photo").value(Base64Utils.encodeToString(DEFAULT_PHOTO)))
-            .andExpect(jsonPath("$.parentKey").value(DEFAULT_PARENT_KEY));
+            .andExpect(jsonPath("$.photo").value(Base64Utils.encodeToString(DEFAULT_PHOTO)));
     }
     @Test
     @Transactional
@@ -231,8 +223,7 @@ public class ChildrenResourceIT {
             .birthCountry(UPDATED_BIRTH_COUNTRY)
             .birthCity(UPDATED_BIRTH_CITY)
             .photo(UPDATED_PHOTO)
-            .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
-            .parentKey(UPDATED_PARENT_KEY);
+            .photoContentType(UPDATED_PHOTO_CONTENT_TYPE);
         ChildrenDTO childrenDTO = childrenMapper.toDto(updatedChildren);
 
         restChildrenMockMvc.perform(put("/api/children")
@@ -251,7 +242,6 @@ public class ChildrenResourceIT {
         assertThat(testChildren.getBirthCity()).isEqualTo(UPDATED_BIRTH_CITY);
         assertThat(testChildren.getPhoto()).isEqualTo(UPDATED_PHOTO);
         assertThat(testChildren.getPhotoContentType()).isEqualTo(UPDATED_PHOTO_CONTENT_TYPE);
-        assertThat(testChildren.getParentKey()).isEqualTo(UPDATED_PARENT_KEY);
     }
 
     @Test

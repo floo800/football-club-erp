@@ -14,5 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="team"/>
 
+        <addForeignKeyConstraint baseColumnNames="parent_id"
+                                 baseTableName="children"
+                                 constraintName="fk_children_parent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
     </changeSet>
 </databaseChangeLog>

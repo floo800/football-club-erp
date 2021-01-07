@@ -45,12 +45,13 @@ public class Children implements Serializable {
     @Column(name = "photo_content_type")
     private String photoContentType;
 
-    @Column(name = "parent_key")
-    private String parentKey;
-
     @ManyToOne
     @JsonIgnoreProperties(value = "children", allowSetters = true)
     private Team team;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "children", allowSetters = true)
+    private User parent;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -152,19 +153,6 @@ public class Children implements Serializable {
         this.photoContentType = photoContentType;
     }
 
-    public String getParentKey() {
-        return parentKey;
-    }
-
-    public Children parentKey(String parentKey) {
-        this.parentKey = parentKey;
-        return this;
-    }
-
-    public void setParentKey(String parentKey) {
-        this.parentKey = parentKey;
-    }
-
     public Team getTeam() {
         return team;
     }
@@ -176,6 +164,19 @@ public class Children implements Serializable {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    public User getParent() {
+        return parent;
+    }
+
+    public Children parent(User user) {
+        this.parent = user;
+        return this;
+    }
+
+    public void setParent(User user) {
+        this.parent = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -207,7 +208,6 @@ public class Children implements Serializable {
             ", birthCity='" + getBirthCity() + "'" +
             ", photo='" + getPhoto() + "'" +
             ", photoContentType='" + getPhotoContentType() + "'" +
-            ", parentKey='" + getParentKey() + "'" +
             "}";
     }
 }
