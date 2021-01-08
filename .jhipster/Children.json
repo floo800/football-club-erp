@@ -25,10 +25,6 @@
       "fieldName": "photo",
       "fieldType": "byte[]",
       "fieldTypeBlobContent": "image"
-    },
-    {
-      "fieldName": "parentKey",
-      "fieldType": "String"
     }
   ],
   "relationships": [
@@ -37,6 +33,13 @@
       "otherEntityName": "team",
       "otherEntityRelationshipName": "children",
       "relationshipName": "team",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "children",
+      "relationshipName": "parent",
       "otherEntityField": "id"
     }
   ],

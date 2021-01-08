@@ -24,7 +24,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Children(0, 'AAAAAAA', 'AAAAAAA', currentDate, 'AAAAAAA', 'AAAAAAA', 'image/png', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Children(0, 'AAAAAAA', 'AAAAAAA', currentDate, 'AAAAAAA', 'AAAAAAA', 'image/png', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -75,7 +75,6 @@ describe('Service Tests', () => {
             birthCountry: 'BBBBBB',
             birthCity: 'BBBBBB',
             photo: 'BBBBBB',
-            parentKey: 'BBBBBB',
           },
           elemDefault
         );
@@ -103,7 +102,6 @@ describe('Service Tests', () => {
             birthCountry: 'BBBBBB',
             birthCity: 'BBBBBB',
             photo: 'BBBBBB',
-            parentKey: 'BBBBBB',
           },
           elemDefault
         );

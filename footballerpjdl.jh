@@ -7,7 +7,6 @@ entity Children {
     birthCountry String,
     birthCity String,
     photo ImageBlob,
-    parentKey String //parent user key
     //relation with team
 }
 
@@ -47,7 +46,8 @@ enum Language {
 
 relationship ManyToOne {
 	Children{team} to Team,
-    Training{team} to Team
+    Training{team} to Team,
+    Children{parent} to User
 }
 
 relationship OneToMany {

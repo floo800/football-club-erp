@@ -11,6 +11,10 @@ import { ChildrenService } from './children.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
 import { ITeam } from 'app/shared/model/team.model';
 import { TeamService } from 'app/entities/team/team.service';
+import { IUser } from 'app/core/user/user.model';
+import { UserService } from 'app/core/user/user.service';
+
+type SelectableEntity = ITeam | IUser;
 
 @Component({
   selector: 'jhi-children-update',
@@ -19,6 +23,7 @@ import { TeamService } from 'app/entities/team/team.service';
 export class ChildrenUpdateComponent implements OnInit {
   isSaving = false;
   teams: ITeam[] = [];
+  users: IUser[] = [];
   birthDateDp: any;
 
   editForm = this.fb.group({
@@ -30,8 +35,8 @@ export class ChildrenUpdateComponent implements OnInit {
     birthCity: [],
     photo: [],
     photoContentType: [],
-    parentKey: [],
     teamId: [],
+    parentId: [],
   });
 
   constructor(
@@ -39,6 +44,7 @@ export class ChildrenUpdateComponent implements OnInit {
     protected eventManager: JhiEventManager,
     protected childrenService: ChildrenService,
     protected teamService: TeamService,
+    protected userService: UserService,
     protected elementRef: ElementRef,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
@@ -49,6 +55,8 @@ export class ChildrenUpdateComponent implements OnInit {
       this.updateForm(children);
 
       this.teamService.query().subscribe((res: HttpResponse<ITeam[]>) => (this.teams = res.body || []));
+
+      this.userService.query().subscribe((res: HttpResponse<IUser[]>) => (this.users = res.body || []));
     });
   }
 
@@ -62,8 +70,8 @@ export class ChildrenUpdateComponent implements OnInit {
       birthCity: children.birthCity,
       photo: children.photo,
       photoContentType: children.photoContentType,
-      parentKey: children.parentKey,
       teamId: children.teamId,
+      parentId: children.parentId,
     });
   }
 
@@ -118,8 +126,8 @@ export class ChildrenUpdateComponent implements OnInit {
       birthCity: this.editForm.get(['birthCity'])!.value,
       photoContentType: this.editForm.get(['photoContentType'])!.value,
       photo: this.editForm.get(['photo'])!.value,
-      parentKey: this.editForm.get(['parentKey'])!.value,
       teamId: this.editForm.get(['teamId'])!.value,
+      parentId: this.editForm.get(['parentId'])!.value,
     };
   }
 
@@ -139,7 +147,7 @@ export class ChildrenUpdateComponent implements OnInit {
     this.isSaving = false;
   }
 
-  trackById(index: number, item: ITeam): any {
+  trackById(index: number, item: SelectableEntity): any {
     return item.id;
   }
 }

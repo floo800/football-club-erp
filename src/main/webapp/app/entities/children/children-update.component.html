@@ -64,16 +64,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="footballClubErpApp.children.parentKey" for="field_parentKey">Parent Key</label>
-                    <input type="text" class="form-control" name="parentKey" id="field_parentKey"
-                           formControlName="parentKey"/>
-                </div>
-
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="footballClubErpApp.children.team" for="field_team">Team</label>
                     <select class="form-control" id="field_team" name="team" formControlName="teamId">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="teamOption.id" *ngFor="let teamOption of teams; trackBy: trackById">{{ teamOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="footballClubErpApp.children.parent" for="field_parent">Parent</label>
+                    <select class="form-control" id="field_parent" name="parent" formControlName="parentId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
                     </select>
                 </div>
             </div>

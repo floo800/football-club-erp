@@ -25,10 +25,10 @@ public class ChildrenDTO implements Serializable {
     private byte[] photo;
 
     private String photoContentType;
-    private String parentKey;
-
 
     private Long teamId;
+
+    private Long parentId;
     
     public Long getId() {
         return id;
@@ -94,20 +94,20 @@ public class ChildrenDTO implements Serializable {
         this.photoContentType = photoContentType;
     }
 
-    public String getParentKey() {
-        return parentKey;
-    }
-
-    public void setParentKey(String parentKey) {
-        this.parentKey = parentKey;
-    }
-
     public Long getTeamId() {
         return teamId;
     }
 
     public void setTeamId(Long teamId) {
         this.teamId = teamId;
+    }
+
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long userId) {
+        this.parentId = userId;
     }
 
     @Override
@@ -138,8 +138,8 @@ public class ChildrenDTO implements Serializable {
             ", birthCountry='" + getBirthCountry() + "'" +
             ", birthCity='" + getBirthCity() + "'" +
             ", photo='" + getPhoto() + "'" +
-            ", parentKey='" + getParentKey() + "'" +
             ", teamId=" + getTeamId() +
+            ", parentId=" + getParentId() +
             "}";
     }
 }

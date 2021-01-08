@@ -9,8 +9,8 @@ export interface IChildren {
   birthCity?: string;
   photoContentType?: string;
   photo?: any;
-  parentKey?: string;
   teamId?: number;
+  parentId?: number;
 }
 
 export class Children implements IChildren {
@@ -23,7 +23,7 @@ export class Children implements IChildren {
     public birthCity?: string,
     public photoContentType?: string,
     public photo?: any,
-    public parentKey?: string,
-    public teamId?: number
+    public teamId?: number,
+    public parentId?: number
   ) {}
 }

@@ -29,8 +29,8 @@
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.children.birthCountry">Birth Country</span></th>
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.children.birthCity">Birth City</span></th>
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.children.photo">Photo</span></th>
-                    <th scope="col" ><span jhiTranslate="footballClubErpApp.children.parentKey">Parent Key</span></th>
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.children.team">Team</span></th>
+                    <th scope="col" ><span jhiTranslate="footballClubErpApp.children.parent">Parent</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -48,11 +48,13 @@
                         </a>
                         <span *ngIf="children.photo">{{ children.photoContentType }}, {{ byteSize(children.photo) }}</span>
                     </td>
-                    <td>{{ children.parentKey }}</td>
                     <td>
                         <div *ngIf="children.teamId">
                             <a [routerLink]="['/team', children.teamId , 'view']" >{{ children.teamId }}</a>
                         </div>
+                    </td>
+                    <td>
+                        {{ children.parentId }}
                     </td>
                     <td class="text-right">
                         <div class="btn-group">

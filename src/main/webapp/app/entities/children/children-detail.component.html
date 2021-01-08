@@ -37,15 +37,15 @@
                         {{ children.photoContentType }}, {{ byteSize(children.photo) }}
                     </div>
                 </dd>
-                <dt><span jhiTranslate="footballClubErpApp.children.parentKey">Parent Key</span></dt>
-                <dd>
-                    <span>{{ children.parentKey }}</span>
-                </dd>
                 <dt><span jhiTranslate="footballClubErpApp.children.team">Team</span></dt>
                 <dd>
                     <div *ngIf="children.teamId">
                         <a [routerLink]="['/team', children.teamId, 'view']">{{ children.teamId }}</a>
                     </div>
+                </dd>
+                <dt><span jhiTranslate="footballClubErpApp.children.parent">Parent</span></dt>
+                <dd>
+                    {{ children.parentId }}
                 </dd>
             </dl>
 

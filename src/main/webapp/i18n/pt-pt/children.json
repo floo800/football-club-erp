@@ -22,8 +22,8 @@
       "birthCountry": "Birth Country",
       "birthCity": "Birth City",
       "photo": "Photo",
-      "parentKey": "Parent Key",
-      "team": "Team"
+      "team": "Team",
+      "parent": "Parent"
     }
   }
 }
