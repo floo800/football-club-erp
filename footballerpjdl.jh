@@ -31,12 +31,14 @@ entity Event {
     startDate LocalDate,
     endDate LocalDate,
     description String,
+    address String,
     image ImageBlob
 }
 
 entity Document {
 	name String,
-    document Blob
+    document Blob,
+    date LocalDate
 }
 
 
