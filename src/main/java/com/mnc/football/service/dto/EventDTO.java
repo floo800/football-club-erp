@@ -19,6 +19,8 @@ public class EventDTO implements Serializable {
 
     private String description;
 
+    private String address;
+
     @Lob
     private byte[] image;
 
@@ -64,6 +66,14 @@ public class EventDTO implements Serializable {
         this.description = description;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public byte[] getImage() {
         return image;
     }
@@ -106,6 +116,7 @@ public class EventDTO implements Serializable {
             ", startDate='" + getStartDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
             ", description='" + getDescription() + "'" +
+            ", address='" + getAddress() + "'" +
             ", image='" + getImage() + "'" +
             "}";
     }

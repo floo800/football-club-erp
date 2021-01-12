@@ -16,12 +16,14 @@ import { AlertError } from 'app/shared/alert/alert-error.model';
 })
 export class DocumentUpdateComponent implements OnInit {
   isSaving = false;
+  dateDp: any;
 
   editForm = this.fb.group({
     id: [],
     name: [],
     document: [],
     documentContentType: [],
+    date: [],
   });
 
   constructor(
@@ -44,6 +46,7 @@ export class DocumentUpdateComponent implements OnInit {
       name: document.name,
       document: document.document,
       documentContentType: document.documentContentType,
+      date: document.date,
     });
   }
 
@@ -84,6 +87,7 @@ export class DocumentUpdateComponent implements OnInit {
       name: this.editForm.get(['name'])!.value,
       documentContentType: this.editForm.get(['documentContentType'])!.value,
       document: this.editForm.get(['document'])!.value,
+      date: this.editForm.get(['date'])!.value,
     };
   }
 

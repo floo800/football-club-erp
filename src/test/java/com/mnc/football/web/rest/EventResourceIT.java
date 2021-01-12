@@ -47,6 +47,9 @@ public class EventResourceIT {
     private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
+    private static final String DEFAULT_ADDRESS = "AAAAAAAAAA";
+    private static final String UPDATED_ADDRESS = "BBBBBBBBBB";
+
     private static final byte[] DEFAULT_IMAGE = TestUtil.createByteArray(1, "0");
     private static final byte[] UPDATED_IMAGE = TestUtil.createByteArray(1, "1");
     private static final String DEFAULT_IMAGE_CONTENT_TYPE = "image/jpg";
@@ -81,6 +84,7 @@ public class EventResourceIT {
             .startDate(DEFAULT_START_DATE)
             .endDate(DEFAULT_END_DATE)
             .description(DEFAULT_DESCRIPTION)
+            .address(DEFAULT_ADDRESS)
             .image(DEFAULT_IMAGE)
             .imageContentType(DEFAULT_IMAGE_CONTENT_TYPE);
         return event;
@@ -97,6 +101,7 @@ public class EventResourceIT {
             .startDate(UPDATED_START_DATE)
             .endDate(UPDATED_END_DATE)
             .description(UPDATED_DESCRIPTION)
+            .address(UPDATED_ADDRESS)
             .image(UPDATED_IMAGE)
             .imageContentType(UPDATED_IMAGE_CONTENT_TYPE);
         return event;
@@ -126,6 +131,7 @@ public class EventResourceIT {
         assertThat(testEvent.getStartDate()).isEqualTo(DEFAULT_START_DATE);
         assertThat(testEvent.getEndDate()).isEqualTo(DEFAULT_END_DATE);
         assertThat(testEvent.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testEvent.getAddress()).isEqualTo(DEFAULT_ADDRESS);
         assertThat(testEvent.getImage()).isEqualTo(DEFAULT_IMAGE);
         assertThat(testEvent.getImageContentType()).isEqualTo(DEFAULT_IMAGE_CONTENT_TYPE);
     }
@@ -166,6 +172,7 @@ public class EventResourceIT {
             .andExpect(jsonPath("$.[*].startDate").value(hasItem(DEFAULT_START_DATE.toString())))
             .andExpect(jsonPath("$.[*].endDate").value(hasItem(DEFAULT_END_DATE.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION)))
+            .andExpect(jsonPath("$.[*].address").value(hasItem(DEFAULT_ADDRESS)))
             .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
             .andExpect(jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))));
     }
@@ -185,6 +192,7 @@ public class EventResourceIT {
             .andExpect(jsonPath("$.startDate").value(DEFAULT_START_DATE.toString()))
             .andExpect(jsonPath("$.endDate").value(DEFAULT_END_DATE.toString()))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION))
+            .andExpect(jsonPath("$.address").value(DEFAULT_ADDRESS))
             .andExpect(jsonPath("$.imageContentType").value(DEFAULT_IMAGE_CONTENT_TYPE))
             .andExpect(jsonPath("$.image").value(Base64Utils.encodeToString(DEFAULT_IMAGE)));
     }
@@ -213,6 +221,7 @@ public class EventResourceIT {
             .startDate(UPDATED_START_DATE)
             .endDate(UPDATED_END_DATE)
             .description(UPDATED_DESCRIPTION)
+            .address(UPDATED_ADDRESS)
             .image(UPDATED_IMAGE)
             .imageContentType(UPDATED_IMAGE_CONTENT_TYPE);
         EventDTO eventDTO = eventMapper.toDto(updatedEvent);
@@ -230,6 +239,7 @@ public class EventResourceIT {
         assertThat(testEvent.getStartDate()).isEqualTo(UPDATED_START_DATE);
         assertThat(testEvent.getEndDate()).isEqualTo(UPDATED_END_DATE);
         assertThat(testEvent.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testEvent.getAddress()).isEqualTo(UPDATED_ADDRESS);
         assertThat(testEvent.getImage()).isEqualTo(UPDATED_IMAGE);
         assertThat(testEvent.getImageContentType()).isEqualTo(UPDATED_IMAGE_CONTENT_TYPE);
     }

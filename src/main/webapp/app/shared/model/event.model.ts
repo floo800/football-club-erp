@@ -6,6 +6,7 @@ export interface IEvent {
   startDate?: Moment;
   endDate?: Moment;
   description?: string;
+  address?: string;
   imageContentType?: string;
   image?: any;
 }
@@ -17,6 +18,7 @@ export class Event implements IEvent {
     public startDate?: Moment,
     public endDate?: Moment,
     public description?: string,
+    public address?: string,
     public imageContentType?: string,
     public image?: any
   ) {}

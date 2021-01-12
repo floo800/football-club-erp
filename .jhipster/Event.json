@@ -18,6 +18,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "image",
       "fieldType": "byte[]",
       "fieldTypeBlobContent": "image"

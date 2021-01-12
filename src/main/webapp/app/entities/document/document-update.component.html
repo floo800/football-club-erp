@@ -35,6 +35,16 @@
                     <input type="hidden" class="form-control" name="documentContentType" id="field_documentContentType"
                            formControlName="documentContentType" />
                 </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="footballClubErpApp.document.date" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker #dateDp="ngbDatepicker" formControlName="date"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <div>

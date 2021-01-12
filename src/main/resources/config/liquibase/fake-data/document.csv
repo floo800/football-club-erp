@@ -1,11 +1,11 @@
-id;name;document;document_content_type
-1;invoice infomediaries;../fake-data/blob/hipster.png;image/png
-2;target Fantastic Universal;../fake-data/blob/hipster.png;image/png
-3;Mountain;../fake-data/blob/hipster.png;image/png
-4;viral hacking parse;../fake-data/blob/hipster.png;image/png
-5;neural El Salvador Colon US Dollar;../fake-data/blob/hipster.png;image/png
-6;Maine hacking;../fake-data/blob/hipster.png;image/png
-7;Automotive azure Auto Loan Account;../fake-data/blob/hipster.png;image/png
-8;hacking Aruban Guilder grey;../fake-data/blob/hipster.png;image/png
-9;pricing structure;../fake-data/blob/hipster.png;image/png
-10;hard drive;../fake-data/blob/hipster.png;image/png
+id;name;document;document_content_type;date
+1;invoice infomediaries;../fake-data/blob/hipster.png;image/png;2021-01-05
+2;Avon 24/7;../fake-data/blob/hipster.png;image/png;2021-01-05
+3;Mountain;../fake-data/blob/hipster.png;image/png;2021-01-05
+4;transparent Soft;../fake-data/blob/hipster.png;image/png;2021-01-05
+5;neural El Salvador Colon US Dollar;../fake-data/blob/hipster.png;image/png;2021-01-06
+6;generate Chicken;../fake-data/blob/hipster.png;image/png;2021-01-06
+7;azure Auto Loan Account optical;../fake-data/blob/hipster.png;image/png;2021-01-06
+8;Intelligent Cotton Car pricing structure Metal;../fake-data/blob/hipster.png;image/png;2021-01-05
+9;Down-sized fault-tolerant Rustic;../fake-data/blob/hipster.png;image/png;2021-01-05
+10;CSS white orchid;../fake-data/blob/hipster.png;image/png;2021-01-05

@@ -9,6 +9,10 @@
       "fieldName": "document",
       "fieldType": "byte[]",
       "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
     }
   ],
   "relationships": [],

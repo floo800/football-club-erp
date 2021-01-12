@@ -18,6 +18,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Base64Utils;
 import javax.persistence.EntityManager;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -40,6 +42,9 @@ public class DocumentResourceIT {
     private static final byte[] UPDATED_DOCUMENT = TestUtil.createByteArray(1, "1");
     private static final String DEFAULT_DOCUMENT_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_DOCUMENT_CONTENT_TYPE = "image/png";
+
+    private static final LocalDate DEFAULT_DATE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE = LocalDate.now(ZoneId.systemDefault());
 
     @Autowired
     private DocumentRepository documentRepository;
@@ -68,7 +73,8 @@ public class DocumentResourceIT {
         Document document = new Document()
             .name(DEFAULT_NAME)
             .document(DEFAULT_DOCUMENT)
-            .documentContentType(DEFAULT_DOCUMENT_CONTENT_TYPE);
+            .documentContentType(DEFAULT_DOCUMENT_CONTENT_TYPE)
+            .date(DEFAULT_DATE);
         return document;
     }
     /**
@@ -81,7 +87,8 @@ public class DocumentResourceIT {
         Document document = new Document()
             .name(UPDATED_NAME)
             .document(UPDATED_DOCUMENT)
-            .documentContentType(UPDATED_DOCUMENT_CONTENT_TYPE);
+            .documentContentType(UPDATED_DOCUMENT_CONTENT_TYPE)
+            .date(UPDATED_DATE);
         return document;
     }
 
@@ -108,6 +115,7 @@ public class DocumentResourceIT {
         assertThat(testDocument.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testDocument.getDocument()).isEqualTo(DEFAULT_DOCUMENT);
         assertThat(testDocument.getDocumentContentType()).isEqualTo(DEFAULT_DOCUMENT_CONTENT_TYPE);
+        assertThat(testDocument.getDate()).isEqualTo(DEFAULT_DATE);
     }
 
     @Test
@@ -144,7 +152,8 @@ public class DocumentResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(document.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].documentContentType").value(hasItem(DEFAULT_DOCUMENT_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].document").value(hasItem(Base64Utils.encodeToString(DEFAULT_DOCUMENT))));
+            .andExpect(jsonPath("$.[*].document").value(hasItem(Base64Utils.encodeToString(DEFAULT_DOCUMENT))))
+            .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())));
     }
     
     @Test
@@ -160,7 +169,8 @@ public class DocumentResourceIT {
             .andExpect(jsonPath("$.id").value(document.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.documentContentType").value(DEFAULT_DOCUMENT_CONTENT_TYPE))
-            .andExpect(jsonPath("$.document").value(Base64Utils.encodeToString(DEFAULT_DOCUMENT)));
+            .andExpect(jsonPath("$.document").value(Base64Utils.encodeToString(DEFAULT_DOCUMENT)))
+            .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()));
     }
     @Test
     @Transactional
@@ -185,7 +195,8 @@ public class DocumentResourceIT {
         updatedDocument
             .name(UPDATED_NAME)
             .document(UPDATED_DOCUMENT)
-            .documentContentType(UPDATED_DOCUMENT_CONTENT_TYPE);
+            .documentContentType(UPDATED_DOCUMENT_CONTENT_TYPE)
+            .date(UPDATED_DATE);
         DocumentDTO documentDTO = documentMapper.toDto(updatedDocument);
 
         restDocumentMockMvc.perform(put("/api/documents")
@@ -200,6 +211,7 @@ public class DocumentResourceIT {
         assertThat(testDocument.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testDocument.getDocument()).isEqualTo(UPDATED_DOCUMENT);
         assertThat(testDocument.getDocumentContentType()).isEqualTo(UPDATED_DOCUMENT_CONTENT_TYPE);
+        assertThat(testDocument.getDate()).isEqualTo(UPDATED_DATE);
     }
 
     @Test
