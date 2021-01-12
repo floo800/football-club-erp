@@ -1,5 +1,6 @@
 package com.mnc.football.service.dto;
 
+import java.time.LocalDate;
 import java.io.Serializable;
 import javax.persistence.Lob;
 
@@ -16,6 +17,8 @@ public class DocumentDTO implements Serializable {
     private byte[] document;
 
     private String documentContentType;
+    private LocalDate date;
+
     
     public Long getId() {
         return id;
@@ -49,6 +52,14 @@ public class DocumentDTO implements Serializable {
         this.documentContentType = documentContentType;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -73,6 +84,7 @@ public class DocumentDTO implements Serializable {
             "id=" + getId() +
             ", name='" + getName() + "'" +
             ", document='" + getDocument() + "'" +
+            ", date='" + getDate() + "'" +
             "}";
     }
 }

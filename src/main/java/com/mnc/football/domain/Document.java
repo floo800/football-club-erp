@@ -6,6 +6,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 /**
  * A Document.
@@ -30,6 +31,9 @@ public class Document implements Serializable {
 
     @Column(name = "document_content_type")
     private String documentContentType;
+
+    @Column(name = "date")
+    private LocalDate date;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -78,6 +82,19 @@ public class Document implements Serializable {
     public void setDocumentContentType(String documentContentType) {
         this.documentContentType = documentContentType;
     }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public Document date(LocalDate date) {
+        this.date = date;
+        return this;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -104,6 +121,7 @@ public class Document implements Serializable {
             ", name='" + getName() + "'" +
             ", document='" + getDocument() + "'" +
             ", documentContentType='" + getDocumentContentType() + "'" +
+            ", date='" + getDate() + "'" +
             "}";
     }
 }

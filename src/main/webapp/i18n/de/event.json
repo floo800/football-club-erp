@@ -20,6 +20,7 @@
       "startDate": "Start Date",
       "endDate": "End Date",
       "description": "Description",
+      "address": "Address",
       "image": "Image"
     }
   }

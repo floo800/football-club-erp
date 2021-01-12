@@ -25,6 +25,7 @@
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.document.name">Name</span></th>
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.document.document">Document</span></th>
+                    <th scope="col" ><span jhiTranslate="footballClubErpApp.document.date">Date</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -36,6 +37,7 @@
                         <a *ngIf="document.document" (click)="openFile(document.documentContentType, document.document)" jhiTranslate="entity.action.open">open</a>
                         <span *ngIf="document.document">{{ document.documentContentType }}, {{ byteSize(document.document) }}</span>
                     </td>
+                    <td>{{ document.date | date:'mediumDate' }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

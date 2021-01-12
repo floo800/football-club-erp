@@ -17,7 +17,8 @@
         "title": "Document"
       },
       "name": "Name",
-      "document": "Document"
+      "document": "Document",
+      "date": "Date"
     }
   }
 }

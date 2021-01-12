@@ -34,6 +34,9 @@ public class Event implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "address")
+    private String address;
+
     @Lob
     @Column(name = "image")
     private byte[] image;
@@ -102,6 +105,19 @@ public class Event implements Serializable {
         this.description = description;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public Event address(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public byte[] getImage() {
         return image;
     }
@@ -154,6 +170,7 @@ public class Event implements Serializable {
             ", startDate='" + getStartDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
             ", description='" + getDescription() + "'" +
+            ", address='" + getAddress() + "'" +
             ", image='" + getImage() + "'" +
             ", imageContentType='" + getImageContentType() + "'" +
             "}";

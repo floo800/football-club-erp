@@ -25,6 +25,7 @@ export class EventUpdateComponent implements OnInit {
     startDate: [],
     endDate: [],
     description: [],
+    address: [],
     image: [],
     imageContentType: [],
   });
@@ -51,6 +52,7 @@ export class EventUpdateComponent implements OnInit {
       startDate: event.startDate,
       endDate: event.endDate,
       description: event.description,
+      address: event.address,
       image: event.image,
       imageContentType: event.imageContentType,
     });
@@ -104,6 +106,7 @@ export class EventUpdateComponent implements OnInit {
       startDate: this.editForm.get(['startDate'])!.value,
       endDate: this.editForm.get(['endDate'])!.value,
       description: this.editForm.get(['description'])!.value,
+      address: this.editForm.get(['address'])!.value,
       imageContentType: this.editForm.get(['imageContentType'])!.value,
       image: this.editForm.get(['image'])!.value,
     };
