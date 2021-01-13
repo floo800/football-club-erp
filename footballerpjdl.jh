@@ -31,7 +31,9 @@ entity Event {
     startDate LocalDate,
     endDate LocalDate,
     description String,
-    address String,
+    streetAndNumber String,
+    cityAndZipCode String
+    country String,
     image ImageBlob
 }
 
