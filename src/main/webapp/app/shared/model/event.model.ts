@@ -6,7 +6,9 @@ export interface IEvent {
   startDate?: Moment;
   endDate?: Moment;
   description?: string;
-  address?: string;
+  streetAndNumber?: string;
+  cityAndZipCode?: string;
+  country?: string;
   imageContentType?: string;
   image?: any;
 }
@@ -18,7 +20,9 @@ export class Event implements IEvent {
     public startDate?: Moment,
     public endDate?: Moment,
     public description?: string,
-    public address?: string,
+    public streetAndNumber?: string,
+    public cityAndZipCode?: string,
+    public country?: string,
     public imageContentType?: string,
     public image?: any
   ) {}

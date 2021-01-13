@@ -20,7 +20,9 @@
       "startDate": "Start Date",
       "endDate": "End Date",
       "description": "Description",
-      "address": "Address",
+      "streetAndNumber": "Street And Number",
+      "cityAndZipCode": "City And Zip Code",
+      "country": "Country",
       "image": "Image"
     }
   }
