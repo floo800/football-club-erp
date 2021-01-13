@@ -19,7 +19,11 @@ public class EventDTO implements Serializable {
 
     private String description;
 
-    private String address;
+    private String streetAndNumber;
+
+    private String cityAndZipCode;
+
+    private String country;
 
     @Lob
     private byte[] image;
@@ -66,12 +70,28 @@ public class EventDTO implements Serializable {
         this.description = description;
     }
 
-    public String getAddress() {
-        return address;
+    public String getStreetAndNumber() {
+        return streetAndNumber;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setStreetAndNumber(String streetAndNumber) {
+        this.streetAndNumber = streetAndNumber;
+    }
+
+    public String getCityAndZipCode() {
+        return cityAndZipCode;
+    }
+
+    public void setCityAndZipCode(String cityAndZipCode) {
+        this.cityAndZipCode = cityAndZipCode;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public byte[] getImage() {
@@ -116,7 +136,9 @@ public class EventDTO implements Serializable {
             ", startDate='" + getStartDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
             ", description='" + getDescription() + "'" +
-            ", address='" + getAddress() + "'" +
+            ", streetAndNumber='" + getStreetAndNumber() + "'" +
+            ", cityAndZipCode='" + getCityAndZipCode() + "'" +
+            ", country='" + getCountry() + "'" +
             ", image='" + getImage() + "'" +
             "}";
     }

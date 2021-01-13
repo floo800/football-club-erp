@@ -34,8 +34,14 @@ public class Event implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "street_and_number")
+    private String streetAndNumber;
+
+    @Column(name = "city_and_zip_code")
+    private String cityAndZipCode;
+
+    @Column(name = "country")
+    private String country;
 
     @Lob
     @Column(name = "image")
@@ -105,17 +111,43 @@ public class Event implements Serializable {
         this.description = description;
     }
 
-    public String getAddress() {
-        return address;
+    public String getStreetAndNumber() {
+        return streetAndNumber;
     }
 
-    public Event address(String address) {
-        this.address = address;
+    public Event streetAndNumber(String streetAndNumber) {
+        this.streetAndNumber = streetAndNumber;
         return this;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setStreetAndNumber(String streetAndNumber) {
+        this.streetAndNumber = streetAndNumber;
+    }
+
+    public String getCityAndZipCode() {
+        return cityAndZipCode;
+    }
+
+    public Event cityAndZipCode(String cityAndZipCode) {
+        this.cityAndZipCode = cityAndZipCode;
+        return this;
+    }
+
+    public void setCityAndZipCode(String cityAndZipCode) {
+        this.cityAndZipCode = cityAndZipCode;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public Event country(String country) {
+        this.country = country;
+        return this;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public byte[] getImage() {
@@ -170,7 +202,9 @@ public class Event implements Serializable {
             ", startDate='" + getStartDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
             ", description='" + getDescription() + "'" +
-            ", address='" + getAddress() + "'" +
+            ", streetAndNumber='" + getStreetAndNumber() + "'" +
+            ", cityAndZipCode='" + getCityAndZipCode() + "'" +
+            ", country='" + getCountry() + "'" +
             ", image='" + getImage() + "'" +
             ", imageContentType='" + getImageContentType() + "'" +
             "}";

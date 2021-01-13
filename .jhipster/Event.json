@@ -18,7 +18,15 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "address",
+      "fieldName": "streetAndNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cityAndZipCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
       "fieldType": "String"
     },
     {

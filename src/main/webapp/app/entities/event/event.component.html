@@ -27,7 +27,9 @@
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.event.startDate">Start Date</span></th>
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.event.endDate">End Date</span></th>
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.event.description">Description</span></th>
-                    <th scope="col" ><span jhiTranslate="footballClubErpApp.event.address">Address</span></th>
+                    <th scope="col" ><span jhiTranslate="footballClubErpApp.event.streetAndNumber">Street And Number</span></th>
+                    <th scope="col" ><span jhiTranslate="footballClubErpApp.event.cityAndZipCode">City And Zip Code</span></th>
+                    <th scope="col" ><span jhiTranslate="footballClubErpApp.event.country">Country</span></th>
                     <th scope="col" ><span jhiTranslate="footballClubErpApp.event.image">Image</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -39,7 +41,9 @@
                     <td>{{ event.startDate | date:'mediumDate' }}</td>
                     <td>{{ event.endDate | date:'mediumDate' }}</td>
                     <td>{{ event.description }}</td>
-                    <td>{{ event.address }}</td>
+                    <td>{{ event.streetAndNumber }}</td>
+                    <td>{{ event.cityAndZipCode }}</td>
+                    <td>{{ event.country }}</td>
                     <td>
                         <a *ngIf="event.image" (click)="openFile(event.imageContentType, event.image)">
                             <img [src]="'data:' + event.imageContentType + ';base64,' + event.image" style="max-height: 30px;" alt="event image"/>
